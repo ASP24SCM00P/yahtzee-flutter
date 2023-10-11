@@ -30,9 +30,9 @@ class _ScorecardDisplayState extends State<ScorecardDisplay> {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.all(5.0), // Add padding around the entire content
+          const EdgeInsets.all(5.0), 
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Center the columns
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, 
         children: [
           Expanded(
             child: Column(
@@ -45,7 +45,7 @@ class _ScorecardDisplayState extends State<ScorecardDisplay> {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(width: 4),
+                 SizedBox(width: 4),
                     Text('${category.name} : '),
                     if (score == null)
                       TextButton(

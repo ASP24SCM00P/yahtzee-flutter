@@ -5,12 +5,10 @@ import 'package:mp2/views/yahtzee.dart';
 
 void main() {
   runApp(MaterialApp(
-    // Get the window size in physical pixels
     title: 'Yahtzee Game',
     home: Scaffold(
-      appBar: CustomAppBar(), // Add the CustomAppBar here
+      appBar: CustomAppBar(),
       body: Yahtzee(),
     ),
   ));
-  
 }
