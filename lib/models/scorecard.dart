@@ -1,5 +1,4 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
 
 
 enum ScoreCategory {
@@ -131,37 +130,4 @@ class ScoreCard {
   }
 }
 
-class TotalScoreDisplay extends StatelessWidget {
-  final ScoreCard scoreCard;
-
-  TotalScoreDisplay({required this.scoreCard});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'Total Score',
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8.0),
-          Text(
-            '${scoreCard.total}',
-            style: TextStyle(
-              fontSize: 36.0,
-              color: Colors.blue,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 

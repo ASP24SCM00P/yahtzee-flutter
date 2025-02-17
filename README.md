@@ -1,64 +1,40 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12055568&assignment_repo_type=AssignmentRepo)
-# CS 442 MP2: Yahtzee
+# 🎲 Yahtzee - A Modern Flutter Implementation
 
-## Overview
+## 🚀 Overview
 
-In this machine problem, your task is to complete the implementation of a single-player [Yahtzee](https://en.wikipedia.org/wiki/Yahtzee) game. Yahtzee is a dice game in which the player rolls five dice up to three times in an attempt to achieve various scoring combinations. The player's score is determined by the sum of the values of the dice when a scoring combination is achieved.
+**Yahtzee** is a single-player dice game built with **Flutter**, designed to provide a seamless and interactive gaming experience. The objective is to roll five dice and strategically choose scoring categories to maximize your score.
 
-If you're not familiar with Yahtzee, here are some resources:
+This project showcases **state management techniques, responsive UI design, and Flutter animations** while implementing the core mechanics of the classic [Yahtzee](https://en.wikipedia.org/wiki/Yahtzee) game.
 
-- [The Wikipedia writeup](https://en.wikipedia.org/wiki/Yahtzee)
-- An [online version of the game](https://cardgames.io/yahtzee/)
+🔹 **Tech Stack:** Flutter, Dart  
+🔹 **Features:** Stateful widgets, score calculations, dice animations  
+🔹 **Status:** 🚧 In Progress / ✅ Complete  
 
-Before moving on, take a moment to familiarize yourself with the basic setup and rules of the game. You'll need to understand them to complete the assignment.
+---
 
-The primary objective of this MP is to provide you with an opportunity to employ various stateful widgets and state-management techniques to implement a non-trivial, single-page application.
+## 🎯 Features
 
+✅ **Fully Functional Dice Rolling Mechanism**  
+✅ **Hold & Release Dice Strategy**  
+✅ **Scoring System Based on Yahtzee Rules**  
+✅ **Dynamic Scorecard with Category Selection**  
+✅ **Game Reset & Replay Support**  
+✅ **Responsive UI (Optimized for Desktop & Web)**  
 
-## Specifications
+---
 
-The version of Yahtzee you will implement is a slightly simplified, single-player version of the game. The player will be able to roll the dice up to three times per turn, choosing a scoring category to end each turn. The game ends when the player has entered a score in each of the 13 categories on the scorecard. Our version will not include the "Yahtzee bonus" rule, which awards additional points for multiple Yahtzees.
+## 🛠️ Installation
 
-To see an example of the app you will implement, see the [MP2 demo video](https://youtu.be/PyLQCjtTpc8?si=OqsugTDnzp-pfgUq). Note that you have the freedom to design and lay out your app in any way you wish, as long as it meets the requirements specified here.
+### **Prerequisites**
+- Install [Flutter](https://flutter.dev/docs/get-started/install)
+- Ensure you have Dart installed (`dart --version`)
 
-
-## Implementation details / requirements
-
-### Behavior
-
-As demonstrated in the video above, the app should clearly display the following information at all times:
-
-- the most recently rolled dice faces in the current turn (if any)
-- which dice are currently "held" (if any)
-- the next roll number (1-3) of the current turn
-- the score corresponding to each used category on the scorecard
-- the remaining, unused categories on the scorecard
-- the current total score
-
-The app should provide the following functionality:
-
-- a mechanism for rolling the dice (e.g., a button), which should be disabled when the player has already rolled three times in the current turn
-- a mechanism (we use a `GestureDetector` in the demo app) for toggling the "held" state of each die
-- a mechanism for selecting a scoring category to end the current turn
-- when the game ends, the app should display the final score until the user dismisses it (we suggest using an [`AlertDialog`](https://api.flutter.dev/flutter/material/AlertDialog-class.html) for this purpose) --- after dismissal, the game should reset to the initial state and be ready to be played again
-
-
-### Screen layout and dimensions
-
-You should lay out your app so that it fits within a 720p (1280x720 pixels) resolution window without overflow or need for scrolling. Note that this means it may not display correctly in an Android or iOS emulator, which is fine for this machine problem.
-
-
-### Project setup
-
-This repository includes a basic Flutter project structure, which you should use as a starting point for your implementation. Do not make changes to the `pubspec.yaml` file (which specifies the project dependencies) without first consulting with us.
-
-You will need to modify `lib/main.dart`, and you can add UI-related source files (e.g., custom `Widget`s) to the `lib/views` directory, data model source files to the `lib/models` directory, and image files to the `assets/images` directory. All your added source files should be written in Dart.
-
-
-### External packages
-
-We have included both the [`provider`](https://pub.dev/packages/provider) and [`collection`](https://pub.dev/packages/collection) packages in the `pubspec.yaml` file. `provider` is a state management package that you may use to manage the stateful data, and `collection` provides some helpful data structure related operations.
-
+### **Steps to Run Locally**
+```bash
+git clone https://github.com/your-username/yahtzee-flutter.git
+cd yahtzee-flutter
+flutter pub get
+flutter run
 
 ### `Dice`, `ScoreCategory`, and `Scorecard` classes
 
@@ -158,53 +134,6 @@ Total score = 41
 null
 ```
 
-While you are free to use the provided classes as-is, you may either ignore them altogether or modify them to suit your implementation. For instance, you may find it useful to make `Dice` and/or `Scorecard` extend  `ChangeNotifier`. 
-
-If you choose not to use them, you will need to implement your own model classes so as to separate your game data and logic from the UI. Feel free to remove the files from the repository if they are unneeded.
 
 
-### Code structure
 
-While the specific widget breakdown is up to you, we ask that you modularize your UI code so that it is easy to read and understand. At a minimum, you should define a separate widget (stateless or stateful, though you'll definitely need at least one stateful widget in the mix) for each of the following UI elements:
-
-- the main Yahtzee game container
-- the dice display
-- the scorecard display
-
-You may wish to create additional widgets to further modularize your code. As a rough guideline, if your `build` method is more than 50 lines long, you should  consider refactoring it into smaller, more manageable widgets. Each of your widgets should live in a separate file in the `lib/views` directory.
-
-Your implementation should not make use of any global variables or functions. All data should be encapsulated in your model classes, and you should use one of the state management techniques discussed in class (e.g., `ChangeNotifier`, `ListenableBuilder`, `provider`) to manage the state of your UI.
-
-
-## Testing
-
-We will be testing your application by building and running it as either a native macOS or Chrome app (which should behave the same). Your app should run without errors or warnings, and should behave as specified above. 
-
-
-## Grading
-
-This machine problem is worth 48 points. Your grade will be based on the following criteria:
-
-- 8 points: the dice rolling mechanism works correctly, including the ability to hold and unhold dice, and the ability to roll up to (but no more than) three times per turn
-
-- 8 points: the scorecard works correctly, including the ability to register a score for a given category just once
-
-- 4 points: scores are correctly calculated for all categories, and the total score is correctly updated
-
-- 4 points: the game correctly ends when all categories have been used, and the final score is correctly displayed
-
-- 4 points: the game state is correctly reset when the user dismisses the final score
-
-- 4 points: your code structure separates layout from data, involving the use of data model classes and avoiding hardcoding game logic/data into widget implementations
-
-- 8 points: your code is well-structured, easy to read, and does a good job modularizing the UI into separate widgets (at a minimum, as suggested in the "Code structure" section above)
-
-- 8 points: your implementation makes effective use of stateful widgets and state management techniques to manage the state of the UI
-
-If your code does not compile, you will receive a zero for the assignment. If your code compiles but does not meet the requirements, you will receive partial credit based on the extent to which it does.
-
-## Submission
-
-To submit your machine problem, commit and push your code to your private GitHub repository shared with us. You can make as many commits and pushes as needed; we will assess the most recent version of your code pushed before the deadline.
-
-If you plan to use late submission days, remember to notify the TAs via email both before the deadline and after your final submission.
